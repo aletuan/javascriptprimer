@@ -71,5 +71,17 @@ if (first === second) {
     console.log("They are not the same with identify operator");
 }
 
+//reduce function
+let products = [
+    { name: "Hat", price: 24.5, stock: 10},
+    { name: "Kayak", price: 289.99, stock: 1},
+    { name: "Soccer Ball", price: 10, stock: 10},
+    { name: "Running Shoes", price: 116.50, stock: 20}
+];
+
+let totalValue = products.filter(item => item.stock <= 1)
+                        .reduce((prev, item) => prev + (item.price * item.stock), 0.01);
+
+console.log("Total value " + totalValue);
 
 
