@@ -49,3 +49,18 @@ var messageFunc = function (weather) {
     console.log(message);
 };
 messageFunc("raining");
+//equal operation
+var first = 5;
+var second = 5;
+if (first == second) {
+    console.log("They are the same with equal operator");
+}
+else {
+    console.log("They are not the same with equal operator");
+}
+if (first === second) {
+    console.log("They are the same with identity operator");
+}
+else {
+    console.log("They are not the same with identify operator");
+}

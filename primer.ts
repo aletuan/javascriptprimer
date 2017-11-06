@@ -55,3 +55,21 @@ let messageFunc = function(weather) {
 
 messageFunc("raining");
 
+//equal operation
+let first = 5;
+let second = 5;
+
+if (first == second) {
+    console.log("They are the same with equal operator");
+} else {
+    console.log("They are not the same with equal operator");
+}
+
+if (first === second) {
+    console.log("They are the same with identity operator");
+} else {
+    console.log("They are not the same with identify operator");
+}
+
+
+
