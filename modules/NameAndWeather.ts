@@ -9,7 +9,7 @@ export class Name {
         this._second = second;
     }
 
-    get nameMessage() {
+    get nameMessage(): string {
         return `Hello ${this._first} ${this._second}.`;
     }
 }
@@ -23,7 +23,7 @@ export class WeatherLocation {
         this._location = location;
     }
 
-    get weatherMessage() {
+    get weatherMessage(): string {
         return `It is ${this._weather} in ${this._location}.`;
     }
 }

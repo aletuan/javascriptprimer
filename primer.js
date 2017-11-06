@@ -165,6 +165,6 @@ var MySubClass = (function (_super) {
 //let myData = new MySubClass("Adam", "sunny", "london");
 //myData.printMessage();
 var name = new NameAndWeather_1.Name("Adam", "Freeman");
-//let loc = new WeatherLocation("raining", "london");
+var loc = new NameAndWeather_1.WeatherLocation("raining", "london");
 console.log(name.nameMessage);
-//console.log(loc.weatherMessage); 
+console.log(loc.weatherMessage);

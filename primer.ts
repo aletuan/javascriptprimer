@@ -1,5 +1,5 @@
 // import from javascript module
-import { Name } from "./modules/NameAndWeather";
+import { Name, WeatherLocation } from "./modules/NameAndWeather";
 
 //console.log("Hello");
 // define and using function
@@ -176,7 +176,7 @@ class MySubClass extends MyClass {
 
 
 let name = new Name("Adam", "Freeman");
-//let loc = new WeatherLocation("raining", "london");
+let loc = new WeatherLocation("raining", "london");
 
 console.log(name.nameMessage);
-//console.log(loc.weatherMessage);
+console.log(loc.weatherMessage);
