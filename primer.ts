@@ -116,6 +116,7 @@ myData.printMessage();
 //console.log("Hello " + myData.name + ".");
 //console.log("Today is " + myData.weather + ".");
 
+// create object by using class
 class MyClass {
     // using underscore as convention
     // to indicate this is internal properties
@@ -134,7 +135,38 @@ class MyClass {
     get weather() {
         return `Today is ${this._weather}.`;
     }
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    printMessage() {
+        console.log("Hello " + this.name + ".");
+    }
 }
 
-let myData = new MyClass("Adam", "sunny");
-console.log(myData.weather);
+//let myData = new MyClass("Adam", "sunny");
+//console.log(myData.weather);
+
+// demo for class inheritance
+class MySubClass extends MyClass {
+    _city: string;
+    
+    constructor(name: string, weather: string, city: string) {
+        super(name, weather);
+        this._city = city;
+    }
+
+    // using override 
+    printMessage() {
+        super.printMessage();
+        console.log("Subclass printing..." + this._city);
+    }
+}
+
+let myData = new MySubClass("Adam", "sunny", "london");
+myData.printMessage();

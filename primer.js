@@ -19,6 +19,11 @@ let myFunc = function(name, weather, ...extraArgs) {
 
 myFunc("Adam", "sunny", "one", "two", "three");
 */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 // high-order function
 /*
 let myFunc = function(nameFunction) {
@@ -107,6 +112,7 @@ myData.printMessage();
 */
 //console.log("Hello " + myData.name + ".");
 //console.log("Today is " + myData.weather + ".");
+// create object by using class
 var MyClass = (function () {
     function MyClass(name, weather) {
         this._name = name;
@@ -122,7 +128,36 @@ var MyClass = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(MyClass.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        set: function (value) {
+            this._name = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MyClass.prototype.printMessage = function () {
+        console.log("Hello " + this.name + ".");
+    };
     return MyClass;
 }());
-var myData = new MyClass("Adam", "sunny");
-console.log(myData.weather);
+//let myData = new MyClass("Adam", "sunny");
+//console.log(myData.weather);
+// demo for class inheritance
+var MySubClass = (function (_super) {
+    __extends(MySubClass, _super);
+    function MySubClass(name, weather, city) {
+        _super.call(this, name, weather);
+        this._city = city;
+    }
+    // using override 
+    MySubClass.prototype.printMessage = function () {
+        _super.prototype.printMessage.call(this);
+        console.log("Subclass printing..." + this._city);
+    };
+    return MySubClass;
+}(MyClass));
+var myData = new MySubClass("Adam", "sunny", "london");
+myData.printMessage();
