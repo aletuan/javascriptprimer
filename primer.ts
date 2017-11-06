@@ -48,14 +48,17 @@ let myFunc = function(name) {
 console.log(myFunc("Adam"));
 
 // using template string
+/*
 let messageFunc = function(weather) {
     let message = `It is ${weather} today`;
     console.log(message);
 }
 
 messageFunc("raining");
+*/
 
 //equal operation
+/*
 let first = 5;
 let second = 5;
 
@@ -70,8 +73,10 @@ if (first === second) {
 } else {
     console.log("They are not the same with identify operator");
 }
+*/
 
 //reduce function
+/*
 let products = [
     { name: "Hat", price: 24.5, stock: 10},
     { name: "Kayak", price: 289.99, stock: 1},
@@ -83,5 +88,24 @@ let totalValue = products.filter(item => item.stock <= 1)
                         .reduce((prev, item) => prev + (item.price * item.stock), 0.01);
 
 console.log("Total value " + totalValue);
+*/
 
+// this code will be error in TypeScript
+/*
+let myData = new Object();
+myData.name = "Adam";
+myData.weather = "sunny";
+
+console.log("Hello " + myData.name + ".");
+console.log("Today is " + myData.weather + ".");
+*/
+
+// define object using object literal format
+let myData = {
+    name: "Adam",
+    weather: "sunny"
+};
+
+console.log("Hello " + myData.name + ".");
+console.log("Today is " + myData.weather + ".");
 

@@ -44,33 +44,58 @@ var myFunc = function (name) {
 };
 console.log(myFunc("Adam"));
 // using template string
-var messageFunc = function (weather) {
-    var message = "It is " + weather + " today";
+/*
+let messageFunc = function(weather) {
+    let message = `It is ${weather} today`;
     console.log(message);
-};
+}
+
 messageFunc("raining");
+*/
 //equal operation
-var first = 5;
-var second = 5;
+/*
+let first = 5;
+let second = 5;
+
 if (first == second) {
     console.log("They are the same with equal operator");
-}
-else {
+} else {
     console.log("They are not the same with equal operator");
 }
+
 if (first === second) {
     console.log("They are the same with identity operator");
-}
-else {
+} else {
     console.log("They are not the same with identify operator");
 }
+*/
 //reduce function
-var products = [
-    { name: "Hat", price: 24.5, stock: 10 },
-    { name: "Kayak", price: 289.99, stock: 1 },
-    { name: "Soccer Ball", price: 10, stock: 10 },
-    { name: "Running Shoes", price: 116.50, stock: 20 }
+/*
+let products = [
+    { name: "Hat", price: 24.5, stock: 10},
+    { name: "Kayak", price: 289.99, stock: 1},
+    { name: "Soccer Ball", price: 10, stock: 10},
+    { name: "Running Shoes", price: 116.50, stock: 20}
 ];
-var totalValue = products.filter(function (item) { return item.stock <= 1; })
-    .reduce(function (prev, item) { return prev + (item.price * item.stock); }, 0.01);
+
+let totalValue = products.filter(item => item.stock <= 1)
+                        .reduce((prev, item) => prev + (item.price * item.stock), 0.01);
+
 console.log("Total value " + totalValue);
+*/
+// this code will be error in TypeScript
+/*
+let myData = new Object();
+myData.name = "Adam";
+myData.weather = "sunny";
+
+console.log("Hello " + myData.name + ".");
+console.log("Today is " + myData.weather + ".");
+*/
+// define object using object literal format
+var myData = {
+    name: "Adam",
+    weather: "sunny"
+};
+console.log("Hello " + myData.name + ".");
+console.log("Today is " + myData.weather + ".");
