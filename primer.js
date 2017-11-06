@@ -1,3 +1,11 @@
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+// import from javascript module
+var NameAndWeather_1 = require("./modules/NameAndWeather");
 //console.log("Hello");
 // define and using function
 /*
@@ -19,11 +27,6 @@ let myFunc = function(name, weather, ...extraArgs) {
 
 myFunc("Adam", "sunny", "one", "two", "three");
 */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 // high-order function
 /*
 let myFunc = function(nameFunction) {
@@ -47,7 +50,7 @@ var myFunc = function (name) {
     var innerFunc = function () { return ("Hello " + name + ". Today is " + myLocalVar + ". And " + myGlobalVar); };
     return innerFunc();
 };
-console.log(myFunc("Adam"));
+//console.log(myFunc("Adam"));
 // using template string
 /*
 let messageFunc = function(weather) {
@@ -159,5 +162,9 @@ var MySubClass = (function (_super) {
     };
     return MySubClass;
 }(MyClass));
-var myData = new MySubClass("Adam", "sunny", "london");
-myData.printMessage();
+//let myData = new MySubClass("Adam", "sunny", "london");
+//myData.printMessage();
+var name = new NameAndWeather_1.Name("Adam", "Freeman");
+//let loc = new WeatherLocation("raining", "london");
+console.log(name.nameMessage);
+//console.log(loc.weatherMessage); 

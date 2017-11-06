@@ -1,3 +1,6 @@
+// import from javascript module
+import { Name } from "./modules/NameAndWeather";
+
 //console.log("Hello");
 // define and using function
 /*
@@ -45,7 +48,7 @@ let myFunc = function(name) {
     return innerFunc();
 }
 
-console.log(myFunc("Adam"));
+//console.log(myFunc("Adam"));
 
 // using template string
 /*
@@ -168,5 +171,12 @@ class MySubClass extends MyClass {
     }
 }
 
-let myData = new MySubClass("Adam", "sunny", "london");
-myData.printMessage();
+//let myData = new MySubClass("Adam", "sunny", "london");
+//myData.printMessage();
+
+
+let name = new Name("Adam", "Freeman");
+//let loc = new WeatherLocation("raining", "london");
+
+console.log(name.nameMessage);
+//console.log(loc.weatherMessage);
