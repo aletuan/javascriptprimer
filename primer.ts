@@ -35,11 +35,23 @@ let myGlobalVar = "apple";
 
 let myFunc = function(name) {
     let myLocalVar = "sunny";
+    /*
     let innerFunc = function() {
         return ("Hello " + name + ". Today is " + myLocalVar + ". And " + myGlobalVar);
     }
+    */
+    // using lambda expresion
+    let innerFunc = () => ("Hello " + name + ". Today is " + myLocalVar + ". And " + myGlobalVar);
     return innerFunc();
 }
 
 console.log(myFunc("Adam"));
+
+// using template string
+let messageFunc = function(weather) {
+    let message = `It is ${weather} today`;
+    console.log(message);
+}
+
+messageFunc("raining");
 
