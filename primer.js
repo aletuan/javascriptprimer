@@ -8,15 +8,21 @@ let myFunc = function() {
 myFunc();
 */
 // using rest parameter
-var myFunc = function (name, weather) {
-    var extraArgs = [];
-    for (var _i = 2; _i < arguments.length; _i++) {
-        extraArgs[_i - 2] = arguments[_i];
-    }
+/*
+let myFunc = function(name, weather, ...extraArgs) {
     console.log("Hello " + name + ".");
     console.log("It is " + weather + " today");
-    for (var i = 0; i < extraArgs.length; i++) {
+    for (let i = 0; i < extraArgs.length; i++) {
         console.log("Extra Args: " + extraArgs[i]);
     }
-};
+}
+
 myFunc("Adam", "sunny", "one", "two", "three");
+*/
+// high-order function
+var myFunc = function (nameFunction) {
+    return ("Hello " + nameFunction() + ".");
+};
+console.log(myFunc(function () {
+    return "Adam";
+}));

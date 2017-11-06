@@ -8,6 +8,7 @@ let myFunc = function() {
 myFunc();
 */
 // using rest parameter
+/*
 let myFunc = function(name, weather, ...extraArgs) {
     console.log("Hello " + name + ".");
     console.log("It is " + weather + " today");
@@ -17,3 +18,14 @@ let myFunc = function(name, weather, ...extraArgs) {
 }
 
 myFunc("Adam", "sunny", "one", "two", "three");
+*/
+
+// high-order function
+let myFunc = function(nameFunction) {
+    return ("Hello " + nameFunction() + ".");
+}
+
+console.log(myFunc(function() {
+    return "Adam";
+}));
+
