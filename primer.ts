@@ -21,6 +21,7 @@ myFunc("Adam", "sunny", "one", "two", "three");
 */
 
 // high-order function
+/*
 let myFunc = function(nameFunction) {
     return ("Hello " + nameFunction() + ".");
 }
@@ -28,4 +29,17 @@ let myFunc = function(nameFunction) {
 console.log(myFunc(function() {
     return "Adam";
 }));
+*/
+// closure feature allow inner function access outer function variable
+let myGlobalVar = "apple";
+
+let myFunc = function(name) {
+    let myLocalVar = "sunny";
+    let innerFunc = function() {
+        return ("Hello " + name + ". Today is " + myLocalVar + ". And " + myGlobalVar);
+    }
+    return innerFunc();
+}
+
+console.log(myFunc("Adam"));
 
