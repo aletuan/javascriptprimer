@@ -103,9 +103,15 @@ console.log("Today is " + myData.weather + ".");
 // define object using object literal format
 let myData = {
     name: "Adam",
-    weather: "sunny"
+    weather: "sunny",
+    printMessage: function() {
+        console.log("Hello " + myData.name + ".");
+        console.log("Today is " + myData.weather + ".");
+    }
 };
 
-console.log("Hello " + myData.name + ".");
-console.log("Today is " + myData.weather + ".");
+myData.printMessage();
+
+//console.log("Hello " + myData.name + ".");
+//console.log("Today is " + myData.weather + ".");
 
