@@ -101,6 +101,7 @@ console.log("Today is " + myData.weather + ".");
 */
 
 // define object using object literal format
+/*
 let myData = {
     name: "Adam",
     weather: "sunny",
@@ -111,7 +112,29 @@ let myData = {
 };
 
 myData.printMessage();
-
+*/
 //console.log("Hello " + myData.name + ".");
 //console.log("Today is " + myData.weather + ".");
 
+class MyClass {
+    // using underscore as convention
+    // to indicate this is internal properties
+    _name: string;
+    _weather: string;
+
+    constructor(name: string, weather: string) {
+        this._name = name;
+        this._weather = weather;
+    }
+
+    set weather(value) {
+        this._weather = value;
+    }
+
+    get weather() {
+        return `Today is ${this._weather}.`;
+    }
+}
+
+let myData = new MyClass("Adam", "sunny");
+console.log(myData.weather);

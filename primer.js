@@ -93,14 +93,36 @@ console.log("Hello " + myData.name + ".");
 console.log("Today is " + myData.weather + ".");
 */
 // define object using object literal format
-var myData = {
+/*
+let myData = {
     name: "Adam",
     weather: "sunny",
-    printMessage: function () {
+    printMessage: function() {
         console.log("Hello " + myData.name + ".");
         console.log("Today is " + myData.weather + ".");
     }
 };
+
 myData.printMessage();
+*/
 //console.log("Hello " + myData.name + ".");
 //console.log("Today is " + myData.weather + ".");
+var MyClass = (function () {
+    function MyClass(name, weather) {
+        this._name = name;
+        this._weather = weather;
+    }
+    Object.defineProperty(MyClass.prototype, "weather", {
+        get: function () {
+            return "Today is " + this._weather + ".";
+        },
+        set: function (value) {
+            this._weather = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return MyClass;
+}());
+var myData = new MyClass("Adam", "sunny");
+console.log(myData.weather);
